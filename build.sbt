@@ -6,10 +6,13 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
-  "com.holdenkarau" %% "spark-testing-base" % "2.1.1_0.9.0" % "test",
-  "org.apache.spark" %% "spark-core" % "2.1.1",
-  "org.apache.spark" %% "spark-sql" % "2.1.1",
-  "org.apache.spark" %% "spark-hive" % "2.1.1"
+  "com.holdenkarau" %% "spark-testing-base" % "1.6.3_0.9.0" % "test",
+  "org.apache.spark" %% "spark-core" % "1.6.3",
+  "org.apache.spark" %% "spark-sql" % "1.6.3",
+  "org.apache.spark" %% "spark-hive" % "1.6.3",
+  "org.typelevel" %% "cats-core" % "0.4.1"
 )
+
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 
 parallelExecution in Test := false
