@@ -12,9 +12,9 @@ object ETLConfig {
 
   def getConfig: String Xor ETLConfig =
     for {
-      sourceTableName <- requiredEnvVar("SRC_TABLE_NAME").map(_)
-      targetTableName <- requiredEnvVar("TGT_TABLE_NAME").map(_)
-      sourcePartitionCol <- requiredEnvVar("SRC_PARTITION_COL").map(_)
+      sourceTableName <- requiredEnvVar("SRC_TABLE_NAME").map(x => x)
+      targetTableName <- requiredEnvVar("TGT_TABLE_NAME").map(x => x)
+      sourcePartitionCol <- requiredEnvVar("SRC_PARTITION_COL").map(x => x)
       keyColumns <- requiredEnvVar("KEY_COLS").map(x => x.split(","))
     } yield ETLConfig (
       sourceTableName,
